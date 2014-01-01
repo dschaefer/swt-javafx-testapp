@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="javafxApp"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="doug.test.JavaFXApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="ide"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="doug.test.javafxApp"
+            name="Eclipse on JavaFX">
+         <property
+               name="applicationXMI"
+               value="doug.test/Application.e4xmi">
+         </property>
+         <property
+               name="rendererFactoryUri"
+               value="bundleclass://doug.test/doug.test.JavaFXRendererFactory">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
